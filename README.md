@@ -2,16 +2,16 @@
 
 ## Topic: Natural Disasters
 
-Reason:   Better Preparation can minimize destruction and improve strategy
+Reason:   Better Preparation can minimize destruction and improve response strategy
 
 Description: CSV File including natural disasters (1953-2016)
 
 Questions:
 
-- Correlation between disaster type and location
-- Frequency and type of disasters over time 
-- Length of diaster comparing past to present
-- Predict the date and type of the disaster
+- Is there a correlation between disaster type and location?
+- Does the frequency and type of disasters change over time?
+- Will the length of the type of diaster decrease from 1953 to 2016?
+- When will the next disaster occur and what type of disaster will it be?
 
 
 ## Description of the Communication Protocols:
@@ -28,3 +28,8 @@ Facebook Prophet uses sklearn model API. We create an instance of the Prophet cl
 ## Database
 
 Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
+
+## Visualization
+
+- Tableau
+- Javascript Leaflet
