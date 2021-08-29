@@ -16,10 +16,10 @@ Questions:
 
 ## Description of the Communication Protocols:
 
--Square - Michael Scorcia
--Triangle - Kelly Rice/Candice Gurbatri
--Circle - Jeferson Stabille/Michael Scorcia
--X - Emma Wallace
+- Square - Michael Scorcia
+- Triangle - Kelly Rice/Candice Gurbatri
+- Circle - Jeferson Stabille/Michael Scorcia
+- X - Emma Wallace
 
 ## Machine Learning Model
 
