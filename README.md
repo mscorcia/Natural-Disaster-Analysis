@@ -2,9 +2,9 @@
 
 ## Topic: Natural Disasters
 
-Reason:   Better Preparation can minimize destruction and improve response strategy
+Reason: Better preparation for natural disasters can minimize destruction and improve response strategy
 
-Description: CSV File including natural disasters (1953-2016)
+Description: CSV file including natural disasters (1953-2016)
 
 Questions:
 
@@ -16,14 +16,14 @@ Questions:
 
 ## Description of the Communication Protocols:
 
-Square - Michael Scorcia
-Triangle - Kelly Rice/Candice Gurbatri
-Circle - Jeferson Stabille/Michael Scorcia
-X - Emma Wallace
+-Square - Michael Scorcia
+-Triangle - Kelly Rice/Candice Gurbatri
+-Circle - Jeferson Stabille/Michael Scorcia
+-X - Emma Wallace
 
 ## Machine Learning Model
 
-Facebook Prophet uses sklearn model API. We create an instance of the Prophet class and then call its fit and predict methods.
+Facebook Prophet uses the sklearn model API. We create an instance of the Prophet class and then call its fit and predict methods to predict the date of future natural disasters.
 
 ## Database
 
