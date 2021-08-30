@@ -10,7 +10,6 @@ Questions:
 
 - Is there a correlation between disaster type and location?
 - Does the frequency and type of disasters change over time?
-- Will the length of the type of diaster decrease from 1953 to 2016?
 - When will the next disaster occur and what type of disaster will it be?
 
 
