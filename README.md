@@ -17,7 +17,7 @@ Questions:
 
 - Square - Michael Scorcia
 - Triangle - Kelly Rice/Candice Gurbatri
-- Circle - Jeferson Stabille/Michael Scorcia
+- Circle - Jeferson Stabille
 - X - Emma Wallace
 
 ## Machine Learning Model
