@@ -34,7 +34,7 @@ Better preparation for natural disasters can minimize destruction and improve re
 ## Description of data exploration phase
 
 ### Database
-The two CSV files were exported as tables, stored in the RDS database using Amazon Web Services (AWS) and joined on XXX.
+The two CSV files were exported as tables, stored in the RDS database using Amazon Web Services (AWS) and joined using SQL.
 Reference tables for state abbreviations and FPIS codes are also included. The ERD schematic is included in the Images folder. All files are included in the Data folder.
 
 Preliminary data visualization included graphing the following relationships:
