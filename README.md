@@ -35,8 +35,6 @@ Better preparation for natural disasters can minimize destruction and improve re
 The two CSV files were exported as tables, stored in the RDS database using Amazon Web Services (AWS) and joined on XXX.
 Reference tables for state abbreviations and FPIS codes are also included. The ERD schematic is included in the Images folder. All files are included in the Data folder.
 
-Preliminary data exploration included cleaning the dataframes to remove null values and columns including:
-
 Preliminary data visualization included graphing the following relationships:
 * number of disasters by state (**Fig. 1**)
 * number of disasters over time (**Fig. 2**)
@@ -57,13 +55,16 @@ Pending:
 disaster type and location
 which disaster is the most frequent in each state (Tableu visualization)
 
+
+### Description of preliminary pre-processing 
+Preliminary data exploration included cleaning the dataframes to remove null values and columns including XXX
+
 ### Description of analysis phase 
+
 
 ## Machine Learning Model
 
-Facebook Prophet uses the sklearn model API. We create an instance of the Prophet class and then call its fit and predict methods to predict the date of future natural disasters.
-
-### Description of preliminary pre-processing 
+Facebook Prophet uses the sklearn model API. We create an instance of the Prophet class and then call its fit and predict methods to predict the number of natural disasters at a given time.
 
 ### Description feature engineering and preliminary feature selection, including their decision-making process
 
