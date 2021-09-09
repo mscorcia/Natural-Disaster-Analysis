@@ -46,8 +46,7 @@ Preliminary data visualization included graphing the following relationships:
 ![incident_counts_by_state](https://user-images.githubusercontent.com/45336910/132601880-49945f70-8853-4f02-9cb6-5b4a41a6c1d3.png)
 
 **Fig. 2**
-!![incident_counts](https://user-images.githubusercontent.com/45336910/132601946-8c029ab8-5f79-464c-922a-9a8aec1f0a54.png)
-[incident_counts_over_time](https://user-images.githubusercontent.com/45336910/132601919-6fa9ffdd-2335-49ce-ac28-1f8586b2fcdc.png)
+![incident_counts_over_time](https://user-images.githubusercontent.com/45336910/132601919-6fa9ffdd-2335-49ce-ac28-1f8586b2fcdc.png)
 
 **Fig. 3**
 ![incident_counts](https://user-images.githubusercontent.com/45336910/132602012-1f561a2a-1770-4ca8-a6e3-7af45dbc8c9f.png)
