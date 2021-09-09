@@ -2,21 +2,6 @@
 -- DROP TABLE IF EXISTS USDisaster;
 -- DROP TABLE IF EXISTS USStates;
 -- DROP TABLE IF EXISTS FIPS;
--- DROP TABLE IF EXISTS TEMPERATURE;
-
-
-CREATE TABLE public."TEMPERATURE"
-(
-    "TEMPERATURE_ID" integer NOT NULL,    
-    "DATE" date NOT NULL,
-    "STATE" character varying NOT NULL,
-    "Country" character varying NOT NULL,
-    "Fahrenheit" numeric NOT NULL,
-    "AverageTemperatureF" numeric NOT NULL,
-    "AverageTemperatureUncertaintyF" numeric NOT NULL,
-    PRIMARY KEY ("TEMPERATURE_ID")
-);
-
 
 CREATE TABLE public."FPIS"
 (
