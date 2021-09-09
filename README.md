@@ -31,7 +31,9 @@ Better preparation for natural disasters can minimize destruction and improve re
 - Can the number of disasters in a specified year be predicted based off of historial data? 
 - Can we predict whether or not a disaster will occur?
 
-### Description of data exploration phase
+## Description of data exploration phase
+
+### Database
 The two CSV files were exported as tables, stored in the RDS database using Amazon Web Services (AWS) and joined on XXX.
 Reference tables for state abbreviations and FPIS codes are also included. The ERD schematic is included in the Images folder. All files are included in the Data folder.
 
@@ -72,7 +74,7 @@ Facebook Prophet uses the sklearn model API. We create an instance of the Prophe
 
 ### Explanation of model choice, including limitations and benefits
 
-## Database
+
 
 Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 
