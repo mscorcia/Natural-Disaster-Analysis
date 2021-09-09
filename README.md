@@ -10,9 +10,9 @@
 - X - Emma Wallace
 
 ## Software
-pgAdmin 4
-Python -version 3.7
-Jupyter notebook -version 6.1.4
+- pgAdmin 4
+- Python -version 3.7
+- Jupyter notebook -version 6.1.4
 
 ## Description of source of data
 
