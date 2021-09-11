@@ -78,10 +78,11 @@ Facebook Prophet uses the sklearn model API. We create an instance of the Prophe
 
 Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 
-## Visualization
+## Dashboard
 
 - Tableau
-- Javascript Leaflet
+- Javascript Leaflet (?)
+- https://docs.google.com/presentation/d/1KbGC60bf2T-NjHcynDzvxeJ6VsphRRBOGLUToSgOKZg/edit#slide=id.gef310afd0e_0_12
 
 ### Description of the tool(s) that will be used to create final dashboard
 
