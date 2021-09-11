@@ -79,12 +79,10 @@ Facebook Prophet uses the sklearn model API. We create an instance of the Prophe
 Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 
 ## Dashboard
-
-- Tableau
-- Javascript Leaflet (?)
 - https://docs.google.com/presentation/d/1KbGC60bf2T-NjHcynDzvxeJ6VsphRRBOGLUToSgOKZg/edit#slide=id.gef310afd0e_0_12
 
 ### Description of the tool(s) that will be used to create final dashboard
+- Tableau will be used to create the visualizations for the dashboard
 
 ### Description of interactive element(s)
-
+- Dashboard will use a Tableau Action to join a Natural Disasters by Year graph and Natural Diasters by State map. Users will be able to filter by Disaster type as well as filter by a particular state or year 
