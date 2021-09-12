@@ -1,6 +1,7 @@
 # Group-7
 
 ## Topic: Natural Disasters and Earth Surface Temperature Data
+Google slides link: https://docs.google.com/presentation/d/1TlmPHNqpeHwBpQ29GSwozfTvQFlbCuyCH9ntdjvDxmw/edit#slide=id.gea57dcc218_1_0
 
 ## Description of the Communication Protocols:
 
