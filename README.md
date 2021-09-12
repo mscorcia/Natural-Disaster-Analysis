@@ -31,13 +31,31 @@ Better preparation for natural disasters can minimize destruction and improve re
 - Does the frequency and type of disasters change over time?
 - Can the number of disasters in a specified year be predicted based off of historial data alone? 
 - Can we predict whether or not a disaster will occur?
-- Can we predict future Earth Temperatures in a specific location based onn historical data alone?
+- Can we predict future Earth temperatures in a specific location based on historical data alone?
 
 ## Description of data exploration phase
 
 ### Database
 The two CSV files were exported as tables, stored in the RDS database using Amazon Web Services (AWS) and joined using SQL.
 Reference tables for state abbreviations and FPIS codes are also included. The ERD schematic is included in the Images folder. All files are included in the Data folder.
+
+### Description of preliminary pre-processing 
+Preliminary data exploration included cleaning the dataframes to remove null values and columns were dropped and excluded from analysis because they had multiple NaN values, duplicated information present in other columns or did not appear to affect temperature or disaster forecasts. Some of these US_Disaster Table columns dropped include:
+- fema_declaration_string
+- ih_program_declared
+- ia_program_declared
+- pa_program_declared
+- hm_program declared
+- hash
+- last_refresh
+
+Regarding the Temperatures table, the original dataset contained global temperature averages spanning years not included in our US_Disasters dataframe. Therefore, we filtered the table to only include temperatures in the US between 1953 and 2013.
+
+Due to our focus on time, we extracted out month and year from the incident_dates column in the US_Disasters dataframe and the DATE column in the US_Temperature dataframe. Furthermore, this enabled more streamlined downstream analysis because for every disaster date, we did not have a temperature; instead the temperature was only recorded on the first day of the month. Extracting out the month and date from the date columns in both tables allowed for the tables to be joined on these parameters and for both temperature and disaster frequency to be plotted at either a monthly or yearly resolution.
+
+### Description of analysis phase 
+
+Preliminary analysis focused on uncovering the variables, if any, that would influence US natural disasters. Since we had a plethora of historical data, we focused on how features of natural disasters (type, number) changed over time and how temperature over time could also influence the event(s).
 
 Preliminary data visualization included graphing the following relationships:
 * number of disasters by state (**Fig. 1**)
@@ -52,18 +70,6 @@ Preliminary data visualization included graphing the following relationships:
 
 **Fig. 3**
 ![incident_counts](https://user-images.githubusercontent.com/45336910/132602012-1f561a2a-1770-4ca8-a6e3-7af45dbc8c9f.png)
-
-These graphs are also included in the Images folder.
-
-Pending:
-disaster type and location
-which disaster is the most frequent in each state (Tableu visualization)
-
-
-### Description of preliminary pre-processing 
-Preliminary data exploration included cleaning the dataframes to remove null values and columns including XXX
-
-### Description of analysis phase 
 
 
 ## Machine Learning Model
