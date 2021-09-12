@@ -1,6 +1,6 @@
 # Group-7
 
-## Topic: Natural Disasters
+## Topic: Natural Disasters and Earth Surface Temperature Data
 
 ## Description of the Communication Protocols:
 
@@ -28,8 +28,9 @@ Better preparation for natural disasters can minimize destruction and improve re
 **Major Questions**:
 - Is there a correlation between disaster type and location?
 - Does the frequency and type of disasters change over time?
-- Can the number of disasters in a specified year be predicted based off of historial data? 
+- Can the number of disasters in a specified year be predicted based off of historial data alone? 
 - Can we predict whether or not a disaster will occur?
+- Can we predict future Earth Temperatures in a specific location based onn historical data alone?
 
 ## Description of data exploration phase
 
