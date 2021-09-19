@@ -51,7 +51,9 @@ Preliminary data exploration included cleaning the dataframes to remove null val
 
 Regarding the Temperatures table, the original dataset contained global temperature averages spanning years not included in our US_Disasters dataframe. Therefore, we filtered the table to only include temperatures in the US between 1953 and 2013.
 
-Due to our focus on time, we extracted out month and year from the incident_dates column in the US_Disasters dataframe and the DATE column in the US_Temperature dataframe. Furthermore, this enabled more streamlined downstream analysis because for every disaster date, we did not have a temperature; instead the temperature was only recorded on the first day of the month. Extracting out the month and date from the date columns in both tables allowed for the tables to be joined on these parameters and for both temperature and disaster frequency to be plotted at either a monthly or yearly resolution.
+Due to our focus on time, we extracted out month and year from the incident_dates column in the US_Disasters dataframe and the DATE column in the US_Temperature dataframe. Furthermore, this enabled more streamlined downstream analysis because for every disaster date, we did not have a temperature; instead the temperature was only recorded on the first day of the month. Extracting out the month and date from the date columns in both tables allowed for the tables to be joined on these parameters and for both temperature and disaster frequency to be plotted at either a monthly or yearly resolution. Specifically, the tables were joined on "month_year" and "STATE" using an "inner" join. The CSV file of the merged table (temp_disaster_merge_new.csv')is located in the Data folder.
+
+
 
 ### Description of analysis phase 
 
