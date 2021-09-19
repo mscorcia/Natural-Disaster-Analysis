@@ -94,6 +94,7 @@ Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 
 ## Dashboard
 - https://docs.google.com/presentation/d/1KbGC60bf2T-NjHcynDzvxeJ6VsphRRBOGLUToSgOKZg/edit#slide=id.gef310afd0e_0_12
+- Link to Dashboard: https://public.tableau.com/app/profile/emma5832/viz/USNaturalDiasters/U_S_NatualDisasters?publish=yes
 
 ### Description of the tool(s) that will be used to create final dashboard
 - Tableau will be used to create the visualizations for the dashboard
