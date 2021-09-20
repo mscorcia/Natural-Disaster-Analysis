@@ -180,4 +180,4 @@ Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 - Tableau will be used to create the visualizations for the dashboard
 
 ### Description of interactive element(s)
-- Dashboard will use a Tableau Action to join a Natural Disasters by Year graph and Natural Diasters by State map. Users will be able to filter by Disaster type as well as filter by a particular state or year 
+- Users can filter the dashboard by disaster type via a dropdown menu or by year using a silder. They can also click on a specific state on the map to filter the data as well. Any type filter will automatically filter the bar graph, pie chart and map accordingly. 
