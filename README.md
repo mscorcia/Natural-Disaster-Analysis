@@ -89,7 +89,7 @@ In this model, we changed "incident_begin_date" column to date time, filtered to
 
 Our data preprocessing in this model included changing the "DATE"  column to datetime, filtered to show average temperatures for state of New York only, and sorted the data in ascending order by date.  Our model would be using one temperature per date only, so we had to focus on one date for our inputs.  
 
-***Logistic Regression - Hurricane Occurrence Prediction: ***
+***Logistic Regression - Hurricane Occurrence Prediction:***
 
 In this model, we imported a csv file from an AWS S3 bucket.   This csv file is a join of two tables from our database that allows us to look at disaster and temperature data together.  We then checked for null values and removed columns we won't use in the model.  Our next step was encoding the "incident _type" column with pd.get_dummies.  Our goal is to predict the occurrence of a hurricane, so we only kept the encoded column with hurricane data.  Next, we used LabelEncoder to encoded the string object columns to integers.  After the data was in correct format, our last step of preprocessing was to scale the X and Y variables using Standard Scaler.
 
