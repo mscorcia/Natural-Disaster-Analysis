@@ -50,7 +50,7 @@ We made all data manipulation on pandas, and the output was exported using a csv
 #### ERD schematic:
 Here is the entity-relationship diagram of those tables and datasets.
 
-<img src="/Images/diaster_db_erd.png" width="800" height="800">
+<img src="/Images/diaster_db_erd.png" width="700" height="700">
 
 Note: you will be able to find all database-related information in /data folder. 
 
