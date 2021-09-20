@@ -37,7 +37,7 @@ Better preparation for natural disasters can minimize destruction and improve re
 
 ### Database
 The two CSV files were exported as tables, stored in the RDS database using Amazon Web Services (AWS) and joined using SQL.
-Reference tables for stte abbreviations and FPIS codes are also included. The ERD schematic is included in the Images folder. All files are included in the Data folder.
+Reference tables for state abbreviations and FPIS codes are also included. The ERD schematic is included in the Images folder. All files are included in the Data folder.
 
 ### Description of preliminary pre-processing 
 Preliminary data exploration included cleaning the dataframes to remove null values and columns were dropped and excluded from analysis because they had multiple NaN values, duplicated information present in other columns or did not appear to affect temperature or disaster forecasts. Some of these US_Disaster Table columns dropped include:
