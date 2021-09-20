@@ -36,8 +36,23 @@ Better preparation for natural disasters can minimize destruction and improve re
 ## Description of data exploration phase
 
 ### Database
-The two CSV files were exported as tables, stored in the RDS database using Amazon Web Services (AWS) and joined using SQL.
-Reference tables for state abbreviations and FPIS codes are also included. The ERD schematic is included in the Images folder. All files are included in the Data folder.
+Our database comprises four tables and stores all information used on our model. We selected PostgreSQL as our database and stored it at Amazon Web Services (AWS) RDS cloud services. 
+
+We made all data manipulation on pandas, and the output was exported using a csv files format to an AWS S3 bucket. The files stored at the S3 bucket served as input to the Machine Learning (ML) model.
+
+#### Database information: 
+
+- FIPS Table: Accommodates Federal Information Processing System (FIPS) Codes for - States and Counties. FIPS codes are numbers that uniquely identify geographic areas.
+- Temperature Table: Contains the average temperature for a particular state during a specific period.
+- US States Table: Includes state description and its respective abbreviation.
+- Disasters Table: This contains a high-level summary of all federally declared disasters since 1953.
+
+####ERD schematic:
+Here is the entity-relationship diagram of those tables and datasets.
+
+![disaster_db](/Images/diaster_db_erd.png)
+
+Note: you will be able to find all database-related information in /data folder. 
 
 ### Description of preliminary pre-processing 
 Preliminary data exploration included cleaning the dataframes to remove null values and columns were dropped and excluded from analysis because they had multiple NaN values, duplicated information present in other columns or did not appear to affect temperature or disaster forecasts. Some of these US_Disaster Table columns dropped include:
