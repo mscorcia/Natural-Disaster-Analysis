@@ -79,17 +79,80 @@ Preliminary data visualization included graphing the following relationships:
 Facebook Prophet and Logisitic Regression are used for machine learning models. Facebook Prophet uses the sklearn model API. We create an instance of the Prophet class and then call its fit and predict methods to predict the number of natural disasters at a given time.  Logisitic Regression is also used from sklearn.  We encode and split the data in training and testing objects, scale the data, fit the scaled data to the model, and check the accuracy score.
 
 
-### Description feature engineering and preliminary feature selection, including their decision-making process
+### Description of data preprocessing 
 
-The Prophet model uses a datetime and numerical values only to generate future predicts of the numerical value at later dates.  We choose to look at the number of diasters in the state of Texas at a given date.  Texas was chosen because this state as the most number of recorded disaster, discovered from our exploratory analysis. The second prophet model uses the average temperature in New York at the first of every month.   The model then predict the future average temperature at the first day of the month.  The logisitic model goal is to explore if a model can predict is a Hurricane occrued (0 or 1, no or yes) based on recorded statistics of the diaster.  Hurricane is a popular disaster type and the logsitic regression can show if recorded statistics such as year, state, declartion type, and postal code are common in hurrican declaration. Our X inputs arer state	declaration_type, fy_declared,	fips, place_code, designated_area, and declaration_request_number.  Our Y target variable is incident_type_hurricane.
+***Prophet Model - Disaster Prediction:***
 
-###  Description of how data was split into training and testing sets 
+In this model, we changed "incident_begin_date" column to date time, filtered to only show disasters that occurred in the state of Texas, and filtered out any biological disaster types.  Biological disasters were excluded  because the impacts of Covid-19 were included in the data as biological. The count of covid -19 data skews the  timeline of overall disasters since there were so many cases within a short time range.
 
-The Prophet model uses historical datetime and a numerical values as inputs, instead of training and testing sets.  The first prophet model uses the number of total diaster counts at a given date for the state of Texas.  This dataframe will then be fit to the model to see if it can predict a future count of disasters at a future date.  The incident begin date column was converted to the datetime value.  The dataframe was filtered to the state of texas, grouped by incident begin date by counting the number of diaster by date.  The incident begin date and count of disasters by date wherer used at the inputs in the model.  The second prophet model uses the average temperature in New York at the first of every month.  The date column was converted to datetime and the entire datafame was filtered to the state of New York.  The date and average tempeature columns were used as the inputs for the model.  Our logisitc regression model was prepped by taking the disaster table and dropping unnessesary columns.  Incident type was encoded with the get dummies functions.  We only kept the encoded Hurrican incident type column since we are looking at is the occurance of a hurricane could be predicted.  String columns were also encoded with Label Encoder.  The X and Y values were split with train_test_split. The data was then scaled and fit to the model.  
+***Prophet Model - Average Temperature Prediction:***
 
-### Explanation of model choice, including limitations and benefits
+Our data preprocessing in this model included changing the "DATE"  column to datetime, filtered to show average temperatures for state of New York only, and sorted the data in ascending order by date.  Our model would be using one temperature per date only, so we had to focus on one date for our inputs.  
 
-The Prophet model was used because of the incident occurance dates provides in our raw data.  Since this information was available, prophet allows us to use this date to predict numerical values in the future.  The benefit of prophet is that it's a straightforward model that can easily predict future outcomes.  However, a limitation is that it only predicts future values based on patterns of the values at certain dates and assumes value change based on that date.  This can be helpful for temperature data since temperature normally changes based on time of year, however is does not take into consideration environmental factors that affect why something occurs.  The logistic regression model was used because we know the previous data, which called for us to use a suprevised learning model.  The logistic model was beneficial because we know is a diaster already occured.  The accuracy score resulted in about 78%, which seems be an OK model, but therr is a limitationthat our model may be prone to overfitting.
+***Logistic Regression - Hurricane Occurrence Prediction: ***
+
+In this model, we imported a csv file from an AWS S3 bucket.   This csv file is a join of two tables from our database that allows us to look at disaster and temperature data together.  We then checked for null values and removed columns we won't use in the model.  Our next step was encoding the "incident _type" column with pd.get_dummies.  Our goal is to predict the occurrence of a hurricane, so we only kept the encoded column with hurricane data.  Next, we used LabelEncoder to encoded the string object columns to integers.  After the data was in correct format, our last step of preprocessing was to scale the X and Y variables using Standard Scaler.
+
+
+### Description of feature engineering and the feature selection, including their decision making process 
+
+***Prophet Model - Disaster Prediction:***
+
+This model uses two columns in a dataframe, one with a datetime value and one with a numerical value.  The columns we used fro this model are date, and total disaster count at the corresponding date.  This dataframe is fit in the model to generate predictions of disaster counts at a future date. We choose to look at the number of disasters that occurred in the state of Texas from 1956-2021. Texas was chosen because this state has the most number of recorded disasters, discovered from our exploratory analysis, so we were able to work with more data in the model.
+
+***Prophet Model - Average Temperature Prediction:***
+
+Similarly to the first prophet model, we also input a dataframe with two columns, one datetime column and one numerical value column.  In this model, we used the date, and the average temperature at that  corresponding date.  The dates in this model we the first of every month, so the model was fit to show monthly seasonality.  The we looked at the average temperatures in New York only because fitting the model with multiple states would not produce accurate analysis. The model can then  attempt to predict the future average temperature at the first day of the month.
+
+***Logistic Regression - Hurricane Occurrence Prediction:***
+
+The logistic model goal is to explore if a model can predict if a Hurricane occurred based on recorded statistics of the disaster that occurred.  The Hurricane disaster column was created from encoded the disaster type column, which produced a column of 0 or 1 values, 0 indicating a hurricane did not occur and 1 indicating that a hurricane did occur.  We choose to look at hurricane data due to it being a popular disaster type.  We can gain insights from the logistic regression model to see if recorded statistics are common in hurricane declaration.  Our X inputs are "disaster_number", "STATE", "declaration_type" ,"fips", "place_code", "designated_area" , "declaration_request_number" ,"year_x", "month_x" ,"AverageTemperatureF". Our Y target variable is incident_type_hurricane.
+
+
+### Description of how data was split into training and testing sets 
+
+***Prophet Models - Disaster Prediction and Average Temperature Prediction:***
+
+The prophet models do not use training and testing sets.  Instead, the models uses historical datetime and a numerical values as inputs in a 2 column dataframe.  The dataframe is fit in the model and used to generate predictions of a value at a future date.  Our first prophet model uses the number of total disaster counts at a given date for the state of Texas from 1953-2021. The second prophet model uses the average temperatures in New York at the first day of every month from 1953-2013.
+
+***Logistic Regression - Hurricane Occurrence Prediction:***
+
+The logistic regression model uses the X inputs of"disaster_number", "STATE", "declaration_type" ,"fips", "place_code", "designated_area" , "declaration_request_number" ,"year_x", "month_x" ,"AverageTemperatureF". Our Y target variable is incident_type_hurricane.  The X and Y variables were split with train_test_split. The data was then scaled and fit to the logistic regression model.
+
+### Explanation of model choice, including limitations and benefits 
+
+***Prophet Models - Disaster Prediction and Average Temperature Prediction:***
+
+The goal of the prophet models was to predicts the number or disasters occurring in Texas and the average temperature of each month in New York at a future date.  We decided to use the prophet models because the raw data included details date columns, which is needed to run the prophet model.  Prophet allows us to use historical dates and corresponding numerical values to predict future numerical values. The benefit of prophet is that it's a straightforward model that can easily predict future outcomes. However, a limitation is that it only predicts future values based on patterns of the values at certain dates.  This can be helpful for temperature data since temperature normally changes based on time of year, however is does not take into consideration environmental factors that can effect why something occurs. 
+
+***Logistic Regression - Hurricane Occurrence Prediction:*** 
+
+We choose the logistic regression model because we have a large amount of historical data with known outcomes of when a hurricane occurred, which is used in supervised learning models. The logistic model is beneficial because the ability to predict when a disaster occurs can tell us some of the common characteristics that a hurricane has, such as the time of year they likely occur or common areas that typically have hurricane occurrences.  However, a limitation to the logisitic model is that it can be prone to over fitting.
+
+
+### Description of how they have trained the model thus far, and any additional training that will take place
+
+***Prophet Model - Disaster Prediction:***
+
+This prophet model predicted the number of disasters that will occur in Texas on a daily occurrence until 2022 and we used an interactive plotly graph to display the results. Most of the occurrences seem to fall in the range of 1-100, however there are some predicted negative occurrences that would be considered an inaccurate prediction.
+
+***Prophet Model - Average Temperature Prediction:***
+
+This model attempted to predict average temperatures in New York from 2014-2023.  
+After analyzing the interactive model, I would not consider this model to be accurate because most of the predicted temperatures were not following seasonality trends.  The raw data with be reanalyzed to see if it needs to be further manipulated and scaled to get more accurate results.
+
+***Logistic Regression - Hurricane Occurrence Prediction: ***
+ 
+The model was trained using sklearn.linear_model's LogisticRegression. An instance of the model was created and split into training and testing sets using the train_test_split.  X_train_scaled and y_train variables were used to fit the model.  Predictions were then stored in y_predict variable by using the X_test_scaled variable to make the new predictions.  
+
+
+### Description of current accuracy score 
+
+Our logistic regression resulted in an accuracy score of 89%, indicating the model is good way of predicting hurricane data and it predicted 89% of the Results accurately.  Additionally, our logistic model resulted in the below confusion matrix.
+
+![confusion_matrix](/Images/confusion_matrix.png)
+
+
 
 
 Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
