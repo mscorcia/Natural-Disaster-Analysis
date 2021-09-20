@@ -30,7 +30,7 @@ Better preparation for natural disasters can minimize destruction and improve re
 - Is there a correlation between disaster type and location?
 - Does the frequency and type of disasters change over time?
 - Can the number of disasters in a specified year be predicted based off of historial data alone? 
-- Can we predict whether or not a disaster will occur?
+- Can we predict whether or not a specific disaster will occur in a specific location?
 - Can we predict future Earth temperatures in a specific location based on historical data alone?
 
 ## Description of data exploration phase
@@ -38,7 +38,7 @@ Better preparation for natural disasters can minimize destruction and improve re
 ### Database
 Our database comprises four tables and stores all information used on our model. We selected PostgreSQL as our database and stored it at Amazon Web Services (AWS) RDS cloud services. 
 
-We made all data manipulation on pandas, and the output was exported using a csv files format to an AWS S3 bucket. The files stored at the S3 bucket served as input to the Machine Learning (ML) model.
+All data manipulation was performed in pandas, and the output was exported using a csv files format to an AWS S3 bucket. The files stored at the S3 bucket served as input to the Machine Learning (ML) model.
 
 #### Database information: 
 
@@ -67,7 +67,6 @@ Preliminary data exploration included cleaning the dataframes to remove null val
 Regarding the Temperatures table, the original dataset contained global temperature averages spanning years not included in our US_Disasters dataframe. Therefore, we filtered the table to only include temperatures in the US between 1953 and 2013.
 
 Due to our focus on time, we extracted out month and year from the incident_dates column in the US_Disasters dataframe and the DATE column in the US_Temperature dataframe. Furthermore, this enabled more streamlined downstream analysis because for every disaster date, we did not have a temperature; instead the temperature was only recorded on the first day of the month. Extracting out the month and date from the date columns in both tables allowed for the tables to be joined on these parameters and for both temperature and disaster frequency to be plotted at either a monthly or yearly resolution. Specifically, the tables were joined on "month_year" and "STATE" using an "inner" join. The CSV file of the merged table (temp_disaster_merge_new.csv)is stored in an S3 bucket on AWS.
-
 
 
 ### Description of analysis phase 
