@@ -47,7 +47,7 @@ We made all data manipulation on pandas, and the output was exported using a csv
 - US States Table: Includes state description and its respective abbreviation.
 - Disasters Table: This contains a high-level summary of all federally declared disasters since 1953.
 
-####ERD schematic:
+#### ERD schematic:
 Here is the entity-relationship diagram of those tables and datasets.
 
 ![disaster_db](/Images/diaster_db_erd.png)
