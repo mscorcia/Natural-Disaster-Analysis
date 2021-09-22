@@ -27,11 +27,10 @@ Google slides link: https://docs.google.com/presentation/d/1TlmPHNqpeHwBpQ29GSwo
 Better preparation for natural disasters can minimize destruction and improve response strategy
 
 **Major Questions**:
-- Is there a correlation between disaster type and location?
-- Does the frequency and type of disasters change over time?
-- Can the number of disasters in a specified year be predicted based off of historial data alone? 
-- Can we predict whether or not a specific disaster will occur in a specific location?
-- Can we predict future Earth temperatures in a specific location based on historical data alone?
+- Can the occurrence of a hurricane be predicted based off historical statistics of the incident?
+- Can we predict the total number of disasters that will occur in Texas over time?
+- Can we predict average temperature in New York over time?
+
 
 ## Description of data exploration phase
 
