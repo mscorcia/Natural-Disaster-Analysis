@@ -52,7 +52,7 @@ Here is the entity-relationship diagram of those tables and datasets.
 
 <img src="/Images/diaster_db_erd.png" width="700" height="700">
 
-Note: you will be able to find all database-related information in /data folder. 
+Note: you will be able to find all database-related information in /data folder 
 
 ### Description of preliminary pre-processing 
 Preliminary data exploration included cleaning the dataframes to remove null values and columns were dropped and excluded from analysis because they had multiple NaN values, duplicated information present in other columns or did not appear to affect temperature or disaster forecasts. Some of these US_Disaster Table columns dropped include:
