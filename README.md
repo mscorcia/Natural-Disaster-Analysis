@@ -15,7 +15,7 @@ Google slides link: https://docs.google.com/presentation/d/1TlmPHNqpeHwBpQ29GSwo
 - Python -version 3.7
 - Jupyter notebook -version 6.1.4
 
-## Description of source of data
+## Description of Source of Data
 
 **Description**:
 * CSV file including natural disasters (1953-2016)
@@ -27,13 +27,12 @@ Google slides link: https://docs.google.com/presentation/d/1TlmPHNqpeHwBpQ29GSwo
 Better preparation for natural disasters can minimize destruction and improve response strategy
 
 **Major Questions**:
-- Is there a correlation between disaster type and location?
-- Does the frequency and type of disasters change over time?
-- Can the number of disasters in a specified year be predicted based off of historial data alone? 
-- Can we predict whether or not a specific disaster will occur in a specific location?
-- Can we predict future Earth temperatures in a specific location based on historical data alone?
+- Can the occurrence of a hurricane be predicted based off historical statistics of the incident?
+- Can we predict the total number of disasters that will occur in Texas over time?
+- Can we predict average temperature in New York over time?
 
-## Description of data exploration phase
+
+## Description of Data Exploration Phase
 
 ### Database
 Our database comprises four tables and stores all information used on our model. We selected PostgreSQL as our database and stored it at Amazon Web Services (AWS) RDS cloud services. 
@@ -47,14 +46,14 @@ All data manipulation was performed in pandas, and the output was exported using
 - US States Table: Includes state description and its respective abbreviation.
 - Disasters Table: This contains a high-level summary of all federally declared disasters since 1953.
 
-#### ERD schematic diagram:
+#### ERD Schematic Diagram:
 Here is the entity-relationship diagram of those tables and datasets.
 
 <img src="/Images/diaster_db_erd.png" width="700" height="700">
 
 Note: you will be able to find all database-related information in /data folder .
 
-### Description of preliminary pre-processing 
+### Description ofPreliminary Pre-Processing 
 Preliminary data exploration included cleaning the dataframes to remove null values and columns were dropped and excluded from analysis because they had multiple NaN values, duplicated information present in other columns or did not appear to affect temperature or disaster forecasts. Some of these US_Disaster Table columns dropped include:
 - fema_declaration_string
 - ih_program_declared
@@ -69,7 +68,7 @@ Regarding the Temperatures table, the original dataset contained global temperat
 Due to our focus on time, we extracted out month and year from the incident_dates column in the US_Disasters dataframe and the DATE column in the US_Temperature dataframe. Furthermore, this enabled more streamlined downstream analysis because for every disaster date, we did not have a temperature; instead the temperature was only recorded on the first day of the month. Extracting out the month and date from the date columns in both tables allowed for the tables to be joined on these parameters and for both temperature and disaster frequency to be plotted at either a monthly or yearly resolution. Specifically, the tables were joined on "month_year" and "STATE" using an "inner" join. The CSV file of the merged table (temp_disaster_merge_new.csv)is stored in an S3 bucket on AWS.
 
 
-### Description of analysis phase 
+### Description of Analysis Phase 
 
 Preliminary analysis focused on uncovering the variables, if any, that would influence US natural disasters. Since we had a plethora of historical data, we focused on how features of natural disasters (type, number) changed over time and how temperature over time could also influence the event(s).
 
@@ -93,7 +92,7 @@ Preliminary data visualization included graphing the following relationships:
 Facebook Prophet and Logisitic Regression are used for machine learning models. Facebook Prophet uses the sklearn model API. We create an instance of the Prophet class and then call its fit and predict methods to predict the number of natural disasters at a given time.  Logisitic Regression is also used from sklearn.  We encode and split the data in training and testing objects, scale the data, fit the scaled data to the model, and check the accuracy score.
 
 
-### Description of data preprocessing 
+### Description of Data Preprocessing 
 
 ***Prophet Model - Disaster Prediction:***
 
@@ -160,16 +159,17 @@ After analyzing the interactive model, I would not consider this model to be acc
 The model was trained using sklearn.linear_model's LogisticRegression. An instance of the model was created and split into training and testing sets using the train_test_split.  X_train_scaled and y_train variables were used to fit the model.  Predictions were then stored in y_predict variable by using the X_test_scaled variable to make the new predictions.  
 
 
-### Description of current accuracy score 
+### Description of Current Accuracy Score 
 
-Our logistic regression resulted in an accuracy score of 89%, indicating the model is good way of predicting hurricane data and it predicted 89% of the Results accurately.  Additionally, our logistic model resulted in the below confusion matrix.
+Our logistic regression resulted in an accuracy score of 89%, indicating the model is good way of predicting hurricane data and it predicted 89% of the Results accurately.  The first time we ran the model , we did not do the join with the temperature dataset yet, so we did not have average temperature as one of the inputs.  With this first attempt, we only got an accuracy score of 79%, so the join on the two tables was able to enhance the model.Additionally, our logistic model resulted in the below confusion matrix.
 
 ![confusion_matrix](/Images/confusion_matrix.png)
 
 
+## Further Analysis
 
+If time allowed for further analysis, we would look into a multivariate regression model, take into account more incident types than just hurricanes in our logistic regression model.  For our Prophet Models, further analysis would include relooking over the distribution of our data set to see why the predicted values may look irregular or use different ETL process that could potentially change these results.
 
-Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 
 ## Dashboard
 - https://docs.google.com/presentation/d/1KbGC60bf2T-NjHcynDzvxeJ6VsphRRBOGLUToSgOKZg/edit#slide=id.gef310afd0e_0_12
@@ -177,6 +177,7 @@ Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 
 ### Description of the tool(s) that will be used to create final dashboard
 - Tableau will be used to create the visualizations for the dashboard
+
 
 ### Description of interactive element(s)
 - Users can filter the dashboard by disaster type via a dropdown menu or by year using a silder. They can also click on a specific state on the map to filter the data as well. Any type filter will automatically filter the bar graph, pie chart and map accordingly. 
