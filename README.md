@@ -51,10 +51,10 @@ Below is the entity-relationship diagram of those tables and datasets.
 
 <img src="/Images/diaster_db_erd.png" width="700" height="700">
 
-Note: you will be able to find all database-related information in /data folder .
+Note: you will be able to find all database-related information in the Data folder .
 
 ### Description ofPreliminary Pre-Processing 
-Preliminary data exploration included cleaning the dataframes to remove null values and columns were dropped and excluded from analysis because they had multiple NaN values, duplicated information present in other columns or did not appear to affect temperature or disaster forecasts. Some of these US_Disaster Table columns dropped include:
+Preliminary data exploration included cleaning the dataframes to remove null values and drop columns excluded from analysis. Columns were dropped if they included  many NaN values, duplicated information present in other columns, or did not appear to affect temperature or disaster forecasts. Some of these US_Disaster Table columns dropped include:
 - fema_declaration_string
 - ih_program_declared
 - ia_program_declared
@@ -65,6 +65,7 @@ Preliminary data exploration included cleaning the dataframes to remove null val
 
 Regarding the Temperatures table, the original dataset contained global temperature averages spanning years not included in our US_Disasters dataframe. Therefore, we filtered the table to only include temperatures in the US between 1953 and 2013.
 
+**Info on merging tables**: 
 Due to our focus on time, we extracted out month and year from the incident_dates column in the US_Disasters dataframe and the DATE column in the US_Temperature dataframe. Furthermore, this enabled more streamlined downstream analysis because for every disaster date, we did not have a temperature; instead the temperature was only recorded on the first day of the month. Extracting out the month and date from the date columns in both tables allowed for the tables to be joined on these parameters and for both temperature and disaster frequency to be plotted at either a monthly or yearly resolution. Specifically, the tables were joined on "month_year" and "STATE" using an "inner" join. The CSV file of the merged table (temp_disaster_merge_new.csv)is stored in an S3 bucket on AWS.
 
 
