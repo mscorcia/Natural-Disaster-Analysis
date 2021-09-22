@@ -161,7 +161,7 @@ The model was trained using sklearn.linear_model's LogisticRegression. An instan
 
 ### Description of current accuracy score 
 
-Our logistic regression resulted in an accuracy score of 89%, indicating the model is good way of predicting hurricane data and it predicted 89% of the Results accurately.  Additionally, our logistic model resulted in the below confusion matrix.
+Our logistic regression resulted in an accuracy score of 89%, indicating the model is good way of predicting hurricane data and it predicted 89% of the Results accurately.  The first time we ran the model , we did not do the join with the temperature dataset yet, so we did not have average temperature as one of the inputs.  With this first attempt, we only got an accuracy score of 79%, so the join on the two tables was able to enhance the model.Additionally, our logistic model resulted in the below confusion matrix.
 
 ![confusion_matrix](/Images/confusion_matrix.png)
 
