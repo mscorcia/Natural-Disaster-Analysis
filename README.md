@@ -39,7 +39,7 @@ Our database comprises four tables and stores all information used on our model.
 
 All data manipulation was performed in pandas, and the output was exported using a csv files format to an AWS S3 bucket. The files stored at the S3 bucket served as input to the machine learning (ML) model.
 
-#### Database information: 
+#### Table information: 
 
 - FIPS Table: Accommodates Federal Information Processing System (FIPS) Codes for states and counties. FIPS codes are numbers that uniquely identify geographic areas.
 - Temperature Table: Contains the average temperature for a particular state during a specific period.
@@ -47,7 +47,7 @@ All data manipulation was performed in pandas, and the output was exported using
 - Disasters Table: This contains a high-level summary of all federally declared disasters since 1953.
 
 #### ERD Schematic Diagram:
-Below is the entity-relationship diagram of those tables and datasets.
+Below is the entity-relationship-diagram of those tables and datasets.
 
 <img src="/Images/diaster_db_erd.png" width="700" height="700">
 
