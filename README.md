@@ -77,6 +77,7 @@ Preliminary data visualization included graphing the following relationships:
 * number of disasters by state (**Fig. 1**)
 * number of disasters over time (**Fig. 2**)
 * total count per natural disaster (**Fig. 3**)
+* temperature vs number of disasters (**Fig. 4**)
 
 **Fig. 1**
 ![incident_counts_by_state](https://user-images.githubusercontent.com/45336910/132601880-49945f70-8853-4f02-9cb6-5b4a41a6c1d3.png)
@@ -86,6 +87,9 @@ Preliminary data visualization included graphing the following relationships:
 
 **Fig. 3**
 ![incident_counts](https://user-images.githubusercontent.com/45336910/132602012-1f561a2a-1770-4ca8-a6e3-7af45dbc8c9f.png)
+
+**Fig 4 ** 
+<img width="602" alt="Screen Shot 2021-09-22 at 6 53 10 PM" src="https://user-images.githubusercontent.com/45336910/134432426-327b280c-6cda-4211-b522-aac53d4016f9.png">
 
 
 ## Machine Learning Model
