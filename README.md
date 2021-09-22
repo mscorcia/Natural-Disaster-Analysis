@@ -18,7 +18,7 @@ Google slides link: https://docs.google.com/presentation/d/1TlmPHNqpeHwBpQ29GSwo
 ## Description of Source of Data
 
 **Description**:
-* CSV file including natural disasters (1953-2016)
+* CSV file including natural disasters (1953-2013)
 * CSV file including Climate Change: Earth Surface Temperature Data 
 
 ## Outline of Project
