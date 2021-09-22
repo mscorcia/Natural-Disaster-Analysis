@@ -184,6 +184,7 @@ If time allowed for further analysis, we would look into a multivariate regressi
 ### Description of Dashboard 
 - Tableau will be used to create the visualizations for the dashboard.
 - Created a calculated field to label some incident types as "other" to reduce visual cluttter
+- Linked to interactive Prophet Prediction graphs by incorporating web pages into the dashbaord, after uploading those HTML files to an AWS s3 bucket
 
 
 
