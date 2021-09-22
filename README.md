@@ -166,9 +166,10 @@ Our logistic regression resulted in an accuracy score of 89%, indicating the mod
 ![confusion_matrix](/Images/confusion_matrix.png)
 
 
+## Further Analysis
 
+If time allowed for further analysis, we would look into a multivariate regression model, take into account more incident types than just hurricanes in our logistic regression model.  For our Prophet Models, further analysis would include relooking over the distribution of our data set to see why the predicted values may look irregular or use different ETL process that could potentially change these results.
 
-Perform ETL on CSV file using Python to clean and store data in PostgreSQL.
 
 ## Dashboard
 - https://docs.google.com/presentation/d/1KbGC60bf2T-NjHcynDzvxeJ6VsphRRBOGLUToSgOKZg/edit#slide=id.gef310afd0e_0_12
