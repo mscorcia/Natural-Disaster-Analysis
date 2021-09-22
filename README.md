@@ -37,17 +37,17 @@ Better preparation for natural disasters can minimize destruction and improve re
 ### Database
 Our database comprises four tables and stores all information used on our model. We selected PostgreSQL as our database and stored it at Amazon Web Services (AWS) RDS cloud services. 
 
-All data manipulation was performed in pandas, and the output was exported using a csv files format to an AWS S3 bucket. The files stored at the S3 bucket served as input to the Machine Learning (ML) model.
+All data manipulation was performed in pandas, and the output was exported using a csv files format to an AWS S3 bucket. The files stored at the S3 bucket served as input to the machine learning (ML) model.
 
 #### Database information: 
 
-- FIPS Table: Accommodates Federal Information Processing System (FIPS) Codes for - States and Counties. FIPS codes are numbers that uniquely identify geographic areas.
+- FIPS Table: Accommodates Federal Information Processing System (FIPS) Codes for states and counties. FIPS codes are numbers that uniquely identify geographic areas.
 - Temperature Table: Contains the average temperature for a particular state during a specific period.
 - US States Table: Includes state description and its respective abbreviation.
 - Disasters Table: This contains a high-level summary of all federally declared disasters since 1953.
 
 #### ERD Schematic Diagram:
-Here is the entity-relationship diagram of those tables and datasets.
+Below is the entity-relationship diagram of those tables and datasets.
 
 <img src="/Images/diaster_db_erd.png" width="700" height="700">
 
