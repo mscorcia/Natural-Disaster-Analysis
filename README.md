@@ -183,7 +183,7 @@ If time allowed for further analysis, we would look into a multivariate regressi
 - Link to Dashboard: https://public.tableau.com/app/profile/emma5832/viz/USNaturalDiasters/U_S_NatualDisasters?publish=yes
 
 ### Description of the tool(s) that will be used to create final dashboard
-- Tableau will be used to create the visualizations for the dashboard
+- Tableau will be used to create the visualizations for the dashboard.
 
 
 ### Description of interactive element(s)
