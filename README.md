@@ -10,7 +10,7 @@ Google slides link: https://docs.google.com/presentation/d/1TlmPHNqpeHwBpQ29GSwo
 - Circle - Jeferson Stabille
 - X - Emma Wallace
 
-## Software
+## Software 
 - pgAdmin 4
 - Python -version 3.7
 - Jupyter notebook -version 6.1.4
